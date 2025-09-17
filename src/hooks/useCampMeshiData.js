@@ -8,6 +8,10 @@ export const useCampMeshiData = () => {
 
     const API_URL = import.meta.env.VITE_WORDPRESS_API_URL;
 
+    if (!API_URL) {
+        throw new Error('API URLが設定されていません');
+    }
+
     //データ取得処理
     useEffect(() => {
         const fetchData = async () => {
