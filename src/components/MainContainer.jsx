@@ -13,11 +13,11 @@ function MainContainer({ children }) {
                 {children}
             </div>
             <div className="flex absolute overflow-hidden md:top-[200px] top-[40px] left-0 right-0 bottom-0 z-[0] w-full h-[884px] dark:hidden">
-                <div className="md:w-[135%] w-[250%] aspect-[1879/884]">
-                    <img className="object-contain object-bottom animate-slow-move" src={bgClouds} alt="" />
+                <div className="md:w-[135%] w-[250%] aspect-[1879/884] animate-slow-move">
+                    <img className="object-contain object-bottom" src={bgClouds} alt="" />
                 </div>
-                <div className="md:w-[135%] w-[250%] aspect-[1879/884]">
-                    <img className="object-contain object-bottom animate-slow-move" src={bgClouds} alt="" />
+                <div className="md:w-[135%] w-[250%] aspect-[1879/884] animate-slow-move">
+                    <img className="object-contain object-bottom" src={bgClouds} alt="" />
                 </div>
             </div>
             <div className="dark:block hidden absolute left-[50%] translate-x-[-50%] md:top-0 top-[-15px] z-[0] md:w-full aspect-[1400/1122] w-[300%]">
