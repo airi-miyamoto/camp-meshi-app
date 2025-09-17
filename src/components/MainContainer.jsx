@@ -12,7 +12,7 @@ function MainContainer({ children }) {
             <div className="container mx-auto px-[24px] md:pt-[120px] pt-[40px] md:pb-[240px] pb-[140px] relative z-[2]">
                 {children}
             </div>
-            <div className="absolute overflow-hidden md:top-[200px] top-[40px] left-0 right-0 bottom-0 z-[0] w-full h-[884px] dark:hidden">
+            <div className="flex absolute overflow-hidden md:top-[200px] top-[40px] left-0 right-0 bottom-0 z-[0] w-full h-[884px] dark:hidden">
                 <div className="md:w-[135%] w-[250%] aspect-[1879/884]">
                     <img className="object-contain object-bottom animate-slow-move" src={bgClouds} alt="" />
                 </div>
