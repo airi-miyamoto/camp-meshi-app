@@ -2,7 +2,8 @@
 @import '@fontsource/zen-kaku-gothic-new/500.css';
 @import '@fontsource/zen-kaku-gothic-new/700.css';
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (@media (prefers-color-scheme: dark));
+@custom-variant dark-manual (&:where(.dark, .dark *));
 
 @theme {
     --font-sans: 'Zen Kaku Gothic New', sans-serif;
@@ -69,7 +70,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-   :root {
+:root {
         --color-brand-primary: var(--color-brand-primary-dark);
         --color-brand-tertiary: var(--color-brand-tertiary-dark);
     }
