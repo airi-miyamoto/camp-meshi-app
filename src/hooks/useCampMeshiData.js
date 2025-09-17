@@ -6,7 +6,7 @@ export const useCampMeshiData = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const API_URL = import.meta.env.VITE_API_URL;
+    const VITE_WORDPRESS_API_URL = import.meta.env.VITE_WORDPRESS_API_URL;
 
     //データ取得処理
     useEffect(() => {
