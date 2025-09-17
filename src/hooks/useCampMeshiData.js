@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { CampMeshiData } from '../data/CampMeshiData'
 
 export const useCampMeshiData = () => {
     // 状態管理用のstate
@@ -7,7 +6,7 @@ export const useCampMeshiData = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const API_URL = 'http://localhost:10028/wp-json/wp/v2/pages/2?_fields=id,title,meta'
+    const API_URL = import.meta.env.VITE_API_URL;
 
     //データ取得処理
     useEffect(() => {
@@ -45,7 +44,7 @@ export const useCampMeshiData = () => {
                 
             } catch (error) {
                 console.error('データの取得に失敗しました:', error);
-                setError('データの取得に失敗しました: ${error.message}');
+                setError(`データの取得に失敗しました: ${error.message}`);
             } finally {
                 setLoading(false);
             }
