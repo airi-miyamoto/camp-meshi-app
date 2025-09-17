@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import '@fontsource/zen-kaku-gothic-new/500.css';
+@import '@fontsource/zen-kaku-gothic-new/700.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Zen Kaku Gothic New', sans-serif;
+
+    /* カスタムカラーパレット */
+    --color-brand-primary: #D2D2A5; /* くすみイエロー */
+    --color-brand-secondary: #390607; /* ブラウン */
+    --color-brand-tertiary: #726D52; /* 文字色 */
+
+    /* ダークモード */
+    --color-brand-primary-dark: #424235; /* くすみイエロー */
+    --color-brand-tertiary-dark: #fff; /* 文字色 */
+
+    /* カスタムスペーシング */
+    --spacing-xs: 0.5rem; /* 8px */ 
+    --spacing-sm: 1rem; /* 16px */
+    --spacing-md: 1.5rem; /* 24px */
+    --spacing-lg: 2.5rem; /* 40px */
+
+    /* 角丸 */
+    --radius-sm: 4px;
+    --radius-md: 16px;
+
+    /* フォントサイズ */
+    --text-xs: 0.75rem; /* 12px */
+    --text-sm: 1rem; /* 16px */
+    --text-md: 1.125rem; /* 18px */
+    --text-lg: 1.25rem; /* 20px */
+    --text-xl: 2rem; /* 32px */
+    --text-2xl: 2.5rem; /* 40px */
+
+    /* アニメーション */
+    --animate-slow-move: slow-move 60s linear infinite;
+    @keyframes slow-move {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    --animate-twinkle: twinkle 5s linear infinite;
+    @keyframes twinkle {
+        0% {
+            opacity: 1;
+        }
+        25% {
+            opacity: 0.2;
+
+        }
+        50% {
+            opacity: 1;
+        }
+        75% {
+            opacity: 0.2;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+}
+
+@media (prefers-color-scheme: dark) {
+   :root {
+        --color-brand-primary: var(--color-brand-primary-dark);
+        --color-brand-tertiary: var(--color-brand-tertiary-dark);
+    }
+}
+
+.dark {
+    --color-brand-primary: var(--color-brand-primary-dark);
+    --color-brand-tertiary: var(--color-brand-tertiary-dark);
+}
+
+@layer base {
+    :root {
+        color: var(--color-brand-tertiary);
+    }
+}
