@@ -1,21 +1,22 @@
-@import "tailwindcss";
 @import '@fontsource/zen-kaku-gothic-new/500.css';
 @import '@fontsource/zen-kaku-gothic-new/700.css';
+@import "tailwindcss";
 
-@custom-variant dark (@media (prefers-color-scheme: dark));
 @custom-variant dark-manual (&:where(.dark, .dark *));
 
 @theme {
-    --font-sans: 'Zen Kaku Gothic New', sans-serif;
-
+    --font-zen-kaku-gothic-new: 'Zen Kaku Gothic New', sans-serif;
+    --default-font-family: var(--font-zen-kaku-gothic-new);
+    
     /* カスタムカラーパレット */
     --color-brand-primary: #D2D2A5; /* くすみイエロー */
     --color-brand-secondary: #390607; /* ブラウン */
-    --color-brand-tertiary: #726D52; /* 文字色 */
+    --color-brand-tertiary: #726D52; /* 明るめ黄色っぽい茶色 */
+    --color-base-font: var(--color-brand-tertiary); /* 文字色 */
 
     /* ダークモード */
     --color-brand-primary-dark: #424235; /* くすみイエロー */
-    --color-brand-tertiary-dark: #fff; /* 文字色 */
+    --color-base-font-dark: #fff; /* 文字色 */
 
     /* カスタムスペーシング */
     --spacing-xs: 0.5rem; /* 8px */ 
@@ -70,19 +71,19 @@
 }
 
 @media (prefers-color-scheme: dark) {
-:root {
+    :root {
         --color-brand-primary: var(--color-brand-primary-dark);
-        --color-brand-tertiary: var(--color-brand-tertiary-dark);
+        --color-base-font: var(--color-base-font-dark);
     }
 }
 
 .dark {
     --color-brand-primary: var(--color-brand-primary-dark);
-    --color-brand-tertiary: var(--color-brand-tertiary-dark);
+    --color-base-font: var(--color-base-font-dark);
 }
 
 @layer base {
     :root {
-        color: var(--color-brand-tertiary);
+        color: var(--color-base-font);
     }
 }
